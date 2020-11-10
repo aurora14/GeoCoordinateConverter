@@ -99,8 +99,7 @@ public struct LatLongMGRS: GeoConversionProviding {
   ]
 
   // MARK: - Initialisation
-  init() {
-  }
+  public init() {}
 
   // MARK: - Public conversion API
 

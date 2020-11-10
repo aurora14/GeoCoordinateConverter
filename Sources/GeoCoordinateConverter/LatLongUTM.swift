@@ -30,6 +30,8 @@ public struct LatLongUTM: GeoConversionProviding {
     static let oneDegreeInRadians = Double.pi / 180.0
   }
 
+  public init() {}
+
   public func convertFromDecimalDegrees(latitude: CLLocationDegrees, longitude: CLLocationDegrees) -> Reference {
 
     do {
