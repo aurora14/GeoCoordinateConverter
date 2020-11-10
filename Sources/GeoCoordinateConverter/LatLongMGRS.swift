@@ -19,9 +19,9 @@ enum MGRSConversionError: Error {
 /// Converts MGRS map reference values from and to WGS84 map reference (lat/long decimal degrees)
 ///
 /// - Note: MGRS = Military Grid Reference System, an adaptation of UTM with higher precision
-struct LatLongMGRS: GeoConversionProviding {
+public struct LatLongMGRS: GeoConversionProviding {
 
-  typealias Reference = MGRSReference
+  public typealias Reference = MGRSReference
 
   /// Describes number of digits required for the northing and easting components, based on precision of the grid. E.g: 1 = there must be exactly 1 digit in the Northing component and exactly 1 digit in the Easting component, making up 2 digits together (the total number of digits must always be even), and representing a 10km grid square precision level, i.e grid square side length.
   ///
@@ -104,7 +104,7 @@ struct LatLongMGRS: GeoConversionProviding {
 
   // MARK: - Public conversion API
 
-  func convertFromDecimalDegrees(latitude: CLLocationDegrees, longitude: CLLocationDegrees) -> Reference {
+  public func convertFromDecimalDegrees(latitude: CLLocationDegrees, longitude: CLLocationDegrees) -> Reference {
 
     do {
       try GeoCoordinateConverter.validateLatLong(latitude: latitude, longitude: longitude)
@@ -129,7 +129,7 @@ struct LatLongMGRS: GeoConversionProviding {
     }
   }
 
-  func convertToDecimalDegrees(reference: Reference) throws -> CLLocationCoordinate2D {
+  public func convertToDecimalDegrees(reference: Reference) throws -> CLLocationCoordinate2D {
 
     let mgrsString = reference.uppercased()
 
