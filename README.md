@@ -1,6 +1,6 @@
 # GeoCoordinateConverter
 
-An adaptation of the WSG 84 / UTM / MGRS converter by @volkerv
+An adaptation of the WSG 84 / UTM / MGRS converter by @volkerv using Swift and SPM
 
 Original ObjC project can be found [here](https://github.com/volkerv/GeoCoordinateConverter)
 
