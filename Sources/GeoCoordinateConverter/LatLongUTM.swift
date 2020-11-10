@@ -14,9 +14,9 @@ enum LatLongUTMError: Error {
 }
 
 /// Converts WGS84 map reference (lat/long decimal degrees) to UTM map reference values from and to 
-struct LatLongUTM: GeoConversionProviding {
+public struct LatLongUTM: GeoConversionProviding {
 
-  typealias Reference = UTMReference
+  public typealias Reference = UTMReference
 
   struct Constants {
     // Source: https://www.e-education.psu.edu/natureofgeoinfo/c2_p23.html
@@ -30,7 +30,7 @@ struct LatLongUTM: GeoConversionProviding {
     static let oneDegreeInRadians = Double.pi / 180.0
   }
 
-  func convertFromDecimalDegrees(latitude: CLLocationDegrees, longitude: CLLocationDegrees) -> Reference {
+  public func convertFromDecimalDegrees(latitude: CLLocationDegrees, longitude: CLLocationDegrees) -> Reference {
 
     do {
       try GeoCoordinateConverter.validateLatLong(latitude: latitude, longitude: longitude)
@@ -57,7 +57,7 @@ struct LatLongUTM: GeoConversionProviding {
     return hemisphere
   }
   
-  func convertToDecimalDegrees(reference: UTMReference) throws -> CLLocationCoordinate2D {
+  public func convertToDecimalDegrees(reference: UTMReference) throws -> CLLocationCoordinate2D {
 
     let measurements = MeasurementsAndMultipliers.From()
 

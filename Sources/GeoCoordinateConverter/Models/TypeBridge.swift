@@ -6,8 +6,8 @@
 //  Copyright © 2020 AG. All rights reserved.
 //
 
-typealias MGRSReference = String
-typealias UTMReference = String
+public typealias MGRSReference = String
+public typealias UTMReference = String
 
 /// A single-character string to use in MGRS and UTM references. A grid reference is composed of two components (N and E)
-typealias DigraphComponent = String
+public typealias DigraphComponent = String
